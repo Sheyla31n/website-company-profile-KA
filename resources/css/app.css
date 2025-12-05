@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@import "./custom.css";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+  --font-poetsen: "Poetsen One", sans-serif;
+}
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@layer utilities {
+  .swiper-slide-active {
+    @apply scale-100;
+  }
+  .swiper-slide-prev,
+  .swiper-slide-next {
+    @apply scale-90 opacity-80;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
