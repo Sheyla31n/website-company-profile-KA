@@ -64,7 +64,6 @@
                                     <img src="{{ asset('storage/' . $slider->image) }}"
                                         class="w-full h-full object-cover" alt="Home Slider">
                                 @endif
-
                             </div>
                         </div>
                     @endforeach
