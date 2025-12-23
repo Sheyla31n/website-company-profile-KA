@@ -3,12 +3,53 @@
 <body class="font-poppins bg-white scroll-smooth">
 
     <x-nav-bar></x-nav-bar>
-    <x-home></x-home>
-    <x-about></x-about>
-    <x-course></x-course>
-    <x-blog></x-blog>
-    <x-contact></x-contact>
-    
+    <x-main.home />
+    <x-main.about-uss />
+    <x-main.course />
+    <x-main.blog />
+    <x-main.contact />
 
+    <script>
+        if (window.location.hash) {
+            const el = document.querySelector(window.location.hash);
+            if (el) {
+                el.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+
+    <script>
+        document.addEventListener('click', function(e) {
+            const link = e.target.closest('.pagination a');
+            if (!link) return;
+
+            e.preventDefault(); // ⛔ STOP reload halaman
+
+            fetch(link.href, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
+                })
+                .then(res => res.text())
+                .then(html => {
+                    document.getElementById('blog-content').innerHTML = html;
+
+                    // scroll ke blog
+                    document.getElementById('blog').scrollIntoView({
+                        behavior: 'smooth'
+                    });
+
+                    // ganti URL TANPA reload
+                    history.pushState(null, '', link.href);
+                });
+        });
+    </script>
+
+    <script>
+        if (location.hash === '#blog') {
+            document.getElementById('blog').scrollIntoView();
+        }
+    </script>
 </body>
-

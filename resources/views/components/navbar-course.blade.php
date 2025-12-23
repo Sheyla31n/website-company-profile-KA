@@ -14,16 +14,10 @@
     <!-- DESKTOP MENU -->
     <el-popover-group class="hidden lg:flex lg:gap-x-5 text-white text-[16px]">
 
-    <!-- Account -->
-  <a href="#" class="flex items-center gap-2">
-    <span class="text-white font-Poppins text-[15px]">Akun</span>
-    <ion-icon name="person-circle-outline" class="text-[28px] text-white"></ion-icon>
-  </a>
-
   <!-- Back -->
   <a href="/" class="flex items-center gap-2 ml-0.5">
-    <ion-icon name="home-outline" class="text-[22px] text-white"></ion-icon>
     <span class="text-white font-semibold text-[15px] ml-1">Back to Home</span>
+    <ion-icon name="home-outline" class="text-[22px] text-white"></ion-icon>
   </a>
 
     </el-popover-group>

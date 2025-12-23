@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     public function loginView() {
-        return view('login'); // sesuaikan nama file login kamu
+        return view('login'); 
     }
 
     public function loginProcess(Request $request)
@@ -16,7 +16,13 @@ class AuthController extends Controller
         $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required'
-        ]);
+        ],
+        [
+            'email.required' => 'Harap isi dengan benar',
+            'email.email' => 'Harap isi dengan benar',
+            'password.required' => 'Harap isi dengan benar',
+        ]
+    );
 
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();

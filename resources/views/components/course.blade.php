@@ -9,7 +9,7 @@
     <!-- CARD WRAPPER -->
     <<div class="flex gap-4 overflow-x-auto justify-center pb-6">
 
-  @for ($i = 0; $i < 6; $i++)
+  @for ($i = 0; $i < 5; $i++)
   <div class="
       bg-white shadow-xl rounded-xl flex-shrink-0 
       w-[50px] h-[240px]       <!-- mobile -->

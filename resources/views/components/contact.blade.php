@@ -1,1 +1,0 @@
-<section id="contact" class="fade-in bg-[#0B2347] min-h-[40vh] mt-16"></section>
