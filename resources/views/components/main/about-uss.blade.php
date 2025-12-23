@@ -1,7 +1,10 @@
-<!-- ABOUT -->
-@props(['about_us' => []])
-@props(['partners' => []])
+@props([
+    'about_us' => [],
+    'partners' => [],
+])
 
+
+<!-- ABOUT -->
 <section id="about"
     class="
         fade-in relative z-5
@@ -67,10 +70,10 @@
 
                 <!-- TRACK 2 (DUPLIKAT) -->
                 <div class="flex gap-6 scroll-track">
-                @if (isset($partners) && count($partners))
-                    @foreach ($partners as $partner)
-                        <div
-                            class="
+                    @if (isset($partners) && count($partners))
+                        @foreach ($partners as $partner)
+                            <div
+                                class="
                             min-w-[120px] sm:min-w-[140px]
                             max-w-[200px]
                             h-[70px] sm:h-[80px]
@@ -79,11 +82,11 @@
                             p-3 sm:p-4
                             flex-shrink-0
                         ">
-                            <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}"
-                                class="max-h-full max-w-full object-contain">
-                        </div>
-                    @endforeach
-                @endif
+                                <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}"
+                                    class="max-h-full max-w-full object-contain">
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
 
             </div>

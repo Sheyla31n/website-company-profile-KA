@@ -1,10 +1,8 @@
-<<<<<<< HEAD
-@props(['course_categories' => []])
-@props(['reviews' => []])
-=======
-@props(['$category' => []])
+@props([
+    'course_categories' => [],
+    'reviews' => [],
+])
 
->>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
 <!-- Course -->
 <section id="courses" class="fade-in min-h-screen bg-white py-4">
     <h1 class="text-center font-poetsen text-[#0B2347] text-[36px] mt-3 mb-3">
@@ -32,25 +30,9 @@
                                 {{ $category->name }}
                             </h3>
                         </div>
-<<<<<<< HEAD
 
                         <!-- IMAGE WRAPPER -->
                         <div class="relative bg-gray-300 w-full h-[70%] overflow-hidden">
-=======
-                    @if (isset($category) && count($category))
-                        @if ($category->icon)
-                            <img src="{{ asset('storage/' . $category->icon) }}" alt="{{ $category->name }}"
-                                class="w-full h-full object-cover hover:scale-105 transition">
-                        @else
-                            <div class="flex items-center justify-center h-full">
-                                <span class="text-gray-500 font-poppins text-sm">
-                                    Coming Soon
-                                </span>
-                            </div>
-                        @endif
-                    @endif
-                    </div>
->>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
 
                             {{-- FADE EFFECT --}}
                             <div

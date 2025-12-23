@@ -45,17 +45,10 @@
     <div class="layer md:col-span-2 bg-white flex flex-col items-start w-full max-w-full overflow-x-hidden">
         <div class="swiper mySwiper ml-0 pl-0 w-[768px] h-[500px] mt-20 md:translate-x-[-110px] overflow-visible">
             <div class="swiper-wrapper">
-<<<<<<< HEAD
                 @if (isset($home_sliders) && count($home_sliders))
                     @foreach ($home_sliders as $slider)
                         <div
                             class="swiper-slide !w-auto shrink-0
-=======
-            @if (isset($home_sliders) && count($home_sliders))
-                @foreach ($home_sliders as $slider)
-                    <div
-                        class="swiper-slide !w-auto shrink-0
->>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
                         [&.swiper-slide-active]:scale-100
                         [&.swiper-slide-prev]:scale-90
                         [&.swiper-slide-next]:scale-90
@@ -74,58 +67,53 @@
 
                             </div>
                         </div>
-<<<<<<< HEAD
                     @endforeach
                 @endif
-=======
-                    </div>
-                @endforeach
-            @endif
->>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
             </div>
         </div>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: "auto",
-                centeredSlides: true,
-                spaceBetween: -20,
-                loop: true,
-                initialSlide: 1,
-                loopAdditionalSlides: 3,
-                grabCursor: true,
-                observer: true,
-                observeParents: true,
-                autoplay: {
-                    delay: 5000,
-                    reverseDirection: true,
-                    disableOnInteraction: false,
-                },
-            });
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            slidesPerView: "auto",
+            centeredSlides: true,
+            spaceBetween: -20,
+            loop: true,
+            initialSlide: 1,
+            loopAdditionalSlides: 3,
+            grabCursor: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+                delay: 5000,
+                reverseDirection: true,
+                disableOnInteraction: false,
+            },
+        });
 
-            // Memastikan DOM siap secepat mungkin
-            document.addEventListener("DOMContentLoaded", function() {
+        // Memastikan DOM siap secepat mungkin
+        document.addEventListener("DOMContentLoaded", function() {
+            swiper.update();
+            swiper.autoplay.start();
+        });
+
+        // Memastikan layout selesai (wajib agar kanan tidak kosong)
+        window.addEventListener("load", () => {
+            swiper.update();
+            swiper.slideTo(1, 0); // ini tetap pakai punyamu
+            swiper.autoplay.start();
+        });
+
+        // Jika tab sempat freeze → autoplay tetap nyala saat balik
+        document.addEventListener("visibilitychange", function() {
+            if (!document.hidden) {
                 swiper.update();
                 swiper.autoplay.start();
-            });
-
-            // Memastikan layout selesai (wajib agar kanan tidak kosong)
-            window.addEventListener("load", () => {
-                swiper.update();
-                swiper.slideTo(1, 0); // ini tetap pakai punyamu
-                swiper.autoplay.start();
-            });
-
-            // Jika tab sempat freeze → autoplay tetap nyala saat balik
-            document.addEventListener("visibilitychange", function() {
-                if (!document.hidden) {
-                    swiper.update();
-                    swiper.autoplay.start();
-                }
-            });
-        </script>
+            }
+        });
+    </script>
     </div>
 
 </section>
