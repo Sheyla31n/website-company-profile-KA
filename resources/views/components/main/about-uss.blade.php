@@ -1,4 +1,7 @@
 <!-- ABOUT -->
+@props(['about_us' => []])
+@props(['partners' => []])
+
 <section id="about"
     class="
         fade-in relative z-5
@@ -15,15 +18,16 @@
         <h1 class="text-center font-poetsen text-[#0B2347] text-[28px] sm:text-[32px] lg:text-[36px] mb-3">
             About Us
         </h1>
-
-        @if ($about_us)
-            <p class="text-justify font-poppins text-black text-[15px] sm:text-[17px] lg:text-[18px]">
-                {{ $about_us?->description }}
-            </p>
-        @else
-            <p class="text-center italic font-poppins text-gray-500 text-[15px] sm:text-[17px] lg:text-[18px]">
-                Belum ada deskripsi
-            </p>
+        @if (isset($about_us) && count($about_us))
+            @if ($about_us)
+                <p class="text-justify font-poppins text-black text-[15px] sm:text-[17px] lg:text-[18px]">
+                    {{ $about_us?->description }}
+                </p>
+            @else
+                <p class="text-center italic font-poppins text-gray-500 text-[15px] sm:text-[17px] lg:text-[18px]">
+                    Belum ada deskripsi
+                </p>
+            @endif
         @endif
     </div>
 
@@ -42,9 +46,10 @@
 
                 <!-- TRACK 1 -->
                 <div class="flex gap-6 scroll-track">
-                    @foreach ($partners as $partner)
-                        <div
-                            class="
+                    @if (isset($partners) && count($partners))
+                        @foreach ($partners as $partner)
+                            <div
+                                class="
                             min-w-[120px] sm:min-w-[140px]
                             max-w-[200px]
                             h-[70px] sm:h-[80px]
@@ -53,14 +58,16 @@
                             p-3 sm:p-4
                             flex-shrink-0
                         ">
-                            <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}"
-                                class="max-h-full max-w-full object-contain">
-                        </div>
-                    @endforeach
+                                <img src="{{ asset('storage/' . $partner->logo) }}" alt="{{ $partner->name }}"
+                                    class="max-h-full max-w-full object-contain">
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
 
                 <!-- TRACK 2 (DUPLIKAT) -->
                 <div class="flex gap-6 scroll-track">
+                @if (isset($partners) && count($partners))
                     @foreach ($partners as $partner)
                         <div
                             class="
@@ -76,6 +83,7 @@
                                 class="max-h-full max-w-full object-contain">
                         </div>
                     @endforeach
+                @endif
                 </div>
 
             </div>
