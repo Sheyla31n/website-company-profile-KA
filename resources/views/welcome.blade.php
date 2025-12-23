@@ -4,10 +4,7 @@
 
     <x-nav-bar></x-nav-bar>
     <x-main.home />
-    <x-main.about-uss />
-    <x-main.course />
-    <x-main.blog />
-    <x-main.contact />
+
 
     <script>
         if (window.location.hash) {
