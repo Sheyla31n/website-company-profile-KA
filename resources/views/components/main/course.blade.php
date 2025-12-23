@@ -1,3 +1,5 @@
+@props(['$category' => []])
+
 <!-- Course -->
 <section id="courses" class="fade-in min-h-screen bg-white py-4">
     <h1 class="text-center font-poetsen text-[#0B2347] text-[36px] mt-3 mb-3">
@@ -34,7 +36,7 @@
                                     bg-gradient-to-b 
                                     from-black/70 via-transparent to-black/70">
                         </div>
-
+                    @if (isset($category) && count($category))
                         @if ($category->icon)
                             <img src="{{ asset('storage/' . $category->icon) }}" alt="{{ $category->name }}"
                                 class="w-full h-full object-cover hover:scale-105 transition">
@@ -45,6 +47,7 @@
                                 </span>
                             </div>
                         @endif
+                    @endif
                     </div>
 
                     <a href="/course"
