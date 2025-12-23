@@ -1,3 +1,5 @@
+@props(['home_sliders' => []])
+
 <section id="home"
     class="fade-in min-h-screen grid grid-cols-1 md:grid-cols-5 bg-cover bg-center bg-fixed pt-[80px]">
 
@@ -43,6 +45,7 @@
     <div class="layer md:col-span-2 bg-white flex flex-col items-start w-full max-w-full overflow-x-hidden">
         <div class="swiper mySwiper ml-0 pl-0 w-[768px] h-[500px] mt-20 md:translate-x-[-110px] overflow-visible">
             <div class="swiper-wrapper">
+            @if (isset($home_sliders) && count($home_sliders))
                 @foreach ($home_sliders as $slider)
                     <div
                         class="swiper-slide !w-auto shrink-0
@@ -65,6 +68,7 @@
                         </div>
                     </div>
                 @endforeach
+            @endif
             </div>
         </div>
 
