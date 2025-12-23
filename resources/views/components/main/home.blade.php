@@ -45,10 +45,17 @@
     <div class="layer md:col-span-2 bg-white flex flex-col items-start w-full max-w-full overflow-x-hidden">
         <div class="swiper mySwiper ml-0 pl-0 w-[768px] h-[500px] mt-20 md:translate-x-[-110px] overflow-visible">
             <div class="swiper-wrapper">
+<<<<<<< HEAD
                 @if (isset($home_sliders) && count($home_sliders))
                     @foreach ($home_sliders as $slider)
                         <div
                             class="swiper-slide !w-auto shrink-0
+=======
+            @if (isset($home_sliders) && count($home_sliders))
+                @foreach ($home_sliders as $slider)
+                    <div
+                        class="swiper-slide !w-auto shrink-0
+>>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
                         [&.swiper-slide-active]:scale-100
                         [&.swiper-slide-prev]:scale-90
                         [&.swiper-slide-next]:scale-90
@@ -67,8 +74,14 @@
 
                             </div>
                         </div>
+<<<<<<< HEAD
                     @endforeach
                 @endif
+=======
+                    </div>
+                @endforeach
+            @endif
+>>>>>>> 8bc28fb676cf037c2a5978941b269c2e3954dc89
             </div>
         </div>
 
