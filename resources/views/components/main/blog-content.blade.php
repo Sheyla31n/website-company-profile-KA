@@ -23,7 +23,9 @@
 
     </div>
 
+    @if ($articles instanceof \Illuminate\Contracts\Pagination\Paginator)
     <div class="mt-6">
         {{ $articles->links('vendor.pagination.pagination') }}
     </div>
+@endif
 </div>
