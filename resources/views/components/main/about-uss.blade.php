@@ -21,16 +21,14 @@
         <h1 class="text-center font-poetsen text-[#0B2347] text-[28px] sm:text-[32px] lg:text-[36px] mb-3">
             About Us
         </h1>
-        @if (isset($about_us) && count($about_us))
-            @if ($about_us)
-                <p class="text-justify font-poppins text-black text-[15px] sm:text-[17px] lg:text-[18px]">
-                    {{ $about_us?->description }}
-                </p>
-            @else
-                <p class="text-center italic font-poppins text-gray-500 text-[15px] sm:text-[17px] lg:text-[18px]">
-                    Belum ada deskripsi
-                </p>
-            @endif
+        @if ($about_us)
+            <p class="text-justify font-poppins text-black text-[15px] sm:text-[17px] lg:text-[18px]">
+                {{ $about_us?->description }}
+            </p>
+        @else
+            <p class="text-center italic font-poppins text-gray-500 text-[15px] sm:text-[17px] lg:text-[18px]">
+                Belum ada deskripsi
+            </p>
         @endif
     </div>
 

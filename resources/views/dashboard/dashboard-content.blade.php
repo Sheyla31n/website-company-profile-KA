@@ -1,3 +1,4 @@
+@props(['role' => '', 'page' => ''])
 <!-- MAIN CONTENT -->
 <main class="flex-1 bg-white rounded-tl-[0px] min-h-screen p-8">
     {{-- ================= STUDENT ================== --}}

@@ -1,4 +1,4 @@
-@props(['role'])
+@props(['role' => ''])
 
 <!-- SIDEBAR -->
 <aside id="sidebar"
