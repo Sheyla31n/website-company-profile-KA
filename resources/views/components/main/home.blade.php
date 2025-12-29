@@ -44,9 +44,9 @@
     <!-- kanan -->
     @php
         $defaultSliders = [
-            'img/home_sliders/gambar1.jpg',
-            'img/home_sliders/gambar2.jpg',
-            'img/home_sliders/gambar3.jpg',
+            'home_sliders/gambar1.jpg',
+            'home_sliders/gambar2.jpg',
+            'home_sliders/gambar3.jpg',
         ];
     @endphp
 
@@ -95,7 +95,7 @@
                                 shadow-[0_15px_20px_-12px_rgba(0,0,0,0.25)]
                                 overflow-hidden flex items-center justify-center">
 
-                                    <img src="{{ asset('storage/' . $image) }}" class="w-full h-full object-cover"
+                                    <img src="{{ asset('img/' . $image) }}" class="w-full h-full object-cover"
                                         alt="Default Home Slider">
                                 </div>
                             </div>
