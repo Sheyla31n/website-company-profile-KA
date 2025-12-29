@@ -31,7 +31,7 @@
 
                 {{-- JIKA DATABASE KOSONG --}}
             @else
-                @for ($i = 1; $i <= 20; $i++)
+                @for ($i = 1; $i <= 10; $i++)
                     <div class="rounded-[20px] bg-[#E4E0DD] h-[180px] shadow-sm overflow-hidden">
 
                         <img src="{{ asset('storage/articles/default1.jpg') }}"

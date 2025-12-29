@@ -14,63 +14,57 @@
         <!-- CARD WRAPPER -->
         <div class="flex gap-4 overflow-x-auto justify-center">
 
-            @if (isset($course_categories) && count($course_categories))
+            @if (isset($course_categories))
                 @forelse ($course_categories as $category)
+                    {{-- CARD NORMAL --}}
                     <div
                         class="bg-white shadow-xl rounded-xl flex-shrink-0 
-                           flex flex-col items-center
-                           w-[80px] h-[240px]
-                           sm:w-[160px] sm:h-[260px]
-                           md:w-[180px] md:h-[300px]
-                           lg:w-[200px] lg:h-[320px]">
+            flex flex-col items-center
+            w-[80px] h-[240px]
+            sm:w-[160px] sm:h-[260px]
+            md:w-[180px] md:h-[300px]
+            lg:w-[200px] lg:h-[320px]">
 
-                        <!-- TITLE -->
                         <div class="w-full text-center py-2">
                             <h3 class="font-poetsen text-[#0B2347] text-sm sm:text-base">
                                 {{ $category->name }}
                             </h3>
                         </div>
 
-                        <!-- IMAGE WRAPPER -->
                         <div class="relative bg-gray-300 w-full h-[70%] overflow-hidden">
-
-                            {{-- FADE EFFECT --}}
                             <div
                                 class="absolute inset-0 pointer-events-none 
-                                    bg-gradient-to-b 
-                                    from-black/70 via-transparent to-black/70">
+                    bg-gradient-to-b 
+                    from-black/70 via-transparent to-black/70">
                             </div>
 
                             @if ($category->icon)
-                                <img src="{{ asset('storage/' . $category->icon) }}" alt="{{ $category->name }}"
+                                <img src="{{ asset('storage/' . $category->icon) }}"
                                     class="w-full h-full object-cover hover:scale-105 transition">
                             @else
                                 <div class="flex items-center justify-center h-full">
-                                    <span class="text-gray-500 font-poppins text-sm">
-                                        Coming Soon
-                                    </span>
+                                    <span class="text-gray-500 text-sm">Coming Soon</span>
                                 </div>
                             @endif
                         </div>
 
                         <a href="/course"
                             class="mt-auto mb-3 px-3 py-1 rounded-full font-poppins
-                               border border-[#103163]
-                               hover:bg-[#103163] hover:text-white hover:shadow-md">
+                border border-[#103163] hover:bg-[#103163] hover:text-white">
                             View Course
                         </a>
                     </div>
 
                 @empty
-                    {{-- FALLBACK JIKA DATA KOSONG --}}
+                    {{-- 🔥 FALLBACK JIKA DATABASE KOSONG --}}
                     @for ($i = 0; $i < 5; $i++)
                         <div
                             class="bg-white shadow-xl rounded-xl flex-shrink-0 
-                               flex flex-col items-center
-                               w-[80px] h-[240px]
-                               sm:w-[160px] sm:h-[260px]
-                               md:w-[180px] md:h-[300px]
-                               lg:w-[200px] lg:h-[320px]">
+                flex flex-col items-center
+                w-[80px] h-[240px]
+                sm:w-[160px] sm:h-[260px]
+                md:w-[180px] md:h-[300px]
+                lg:w-[200px] lg:h-[320px]">
 
                             <div class="w-full text-center py-2">
                                 <h3 class="font-poetsen text-[#0B2347] text-sm">
@@ -80,21 +74,20 @@
 
                             <div class="relative bg-gray-300 w-full h-[70%] overflow-hidden">
                                 <div
-                                    class="absolute inset-0 pointer-events-none 
-                                        bg-gradient-to-b 
-                                        from-black/70 via-transparent to-black/70">
+                                    class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-black/70">
                                 </div>
                             </div>
 
-                            <a href="/course"
+                            <span
                                 class="mt-auto mb-3 px-3 py-1 rounded-full font-poppins
-                                   border border-gray-400 text-gray-400 cursor-not-allowed">
+                    border border-gray-400 text-gray-400 cursor-not-allowed">
                                 View Course
-                            </a>
+                            </span>
                         </div>
                     @endfor
                 @endforelse
             @endif
+
 
         </div>
     </div>
