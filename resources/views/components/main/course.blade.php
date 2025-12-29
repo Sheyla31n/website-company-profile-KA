@@ -98,33 +98,49 @@
            bg-white rounded-[50px_0_50px_0] 
            w-[90%] p-6">
 
-        <div class="grid grid-cols-1 sm:grid-cols-3">
-            @if (isset($reviews) && count($reviews))
-                @foreach ($reviews as $index => $review)
-                    <div
-                        class="px-6
-                {{ $index < count($reviews) - 1 ? 'sm:border-r-2 border-[#0B2347]' : '' }}">
+        <div class="grid grid-cols-1 sm:grid-cols-3 text-center">
 
-                        <h3 class="font-poppins font-semibold text-[#0B2347] mb-1">
-                            {{ $review->name }}
-                        </h3>
+            @if (isset($reviews))
 
-                        <!-- STAR -->
-                        <div class="flex gap-1 mb-2">
-                            @for ($i = 1; $i <= 5; $i++)
-                                <span class="{{ $i <= $review->stars ? 'text-yellow-400' : 'text-gray-300' }}">
-                                    ★
-                                </span>
-                            @endfor
+                {{-- JIKA ADA REVIEW --}}
+                @if (count($reviews))
+                    @foreach ($reviews as $index => $review)
+                        <div
+                            class="px-6
+                        {{ $index < count($reviews) - 1 ? 'sm:border-r-2 border-[#0B2347]' : '' }}">
+
+                            <h3 class="font-poppins font-semibold text-[#0B2347] mb-1">
+                                {{ $review->name }}
+                            </h3>
+
+                            <!-- STAR -->
+                            <div class="flex justify-center gap-1 mb-2">
+                                @for ($i = 1; $i <= 5; $i++)
+                                    <span class="{{ $i <= $review->stars ? 'text-yellow-400' : 'text-gray-300' }}">
+                                        ★
+                                    </span>
+                                @endfor
+                            </div>
+
+                            <p class="text-sm text-black font-poppins">
+                                {{ $review->content }}
+                            </p>
                         </div>
+                    @endforeach
 
-                        <p class="text-sm text-black font-poppins">
-                            {{ $review->content }}
-                        </p>
+                    {{-- JIKA BELUM ADA REVIEW --}}
+                @else
+                    <div class="col-span-1 sm:col-span-3 py-6">
+                        <h3 class="font-poetsen text-[#0B2347] text-lg mb-2">
+                            Belum ada review
+                        </h3>
                     </div>
-                @endforeach
+                @endif
+
             @endif
+
         </div>
     </div>
+
 
 </section>

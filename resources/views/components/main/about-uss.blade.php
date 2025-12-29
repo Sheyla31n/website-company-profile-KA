@@ -26,8 +26,18 @@
                 {{ $about_us?->description }}
             </p>
         @else
-            <p class="text-center italic font-poppins text-gray-500 text-[15px] sm:text-[17px] lg:text-[18px]">
-                Belum ada deskripsi
+            <p class="text-justify font-poppins text-black text-[15px] sm:text-[17px] lg:text-[18px]">
+                Koding Akademi merupakan lembaga kursus dan pelatihan yang berfokus pada pengembangan keterampilan
+                digital, khususnya di bidang pemrograman (coding), pengembangan aplikasi, dan teknologi informasi.
+                Berpusat di Denpasar, Bali, Koding Akademi memiliki beberapa cabang, termasuk salah satunya di Surabaya
+                tepatnya berlokasi di Citraland dan Tenggilis. Koding Akademi menghadirkan program pembelajaran berbasis
+                proyek (project-based learning) yang menekankan pada praktik langsung serta penyelesaian studi kasus
+                nyata. <br>
+
+                Program-program yang ditawarkan meliputi pelatihan dasar pemrograman, pengembangan aplikasi web maupun
+                mobile, hingga kursus lanjutan sesuai kebutuhan industri. Dengan pendekatan ini, Koding Akademi menjadi
+                salah satu mitra strategis dalam mendukung percepatan transformasi digital dan peningkatan kualitas
+                sumber daya manusia di bidang teknologi.
             </p>
         @endif
     </div>

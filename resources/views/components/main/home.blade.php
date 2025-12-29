@@ -43,7 +43,11 @@
 
     <!-- kanan -->
     @php
-        $defaultSliders = ['home_sliders/gambar1.jpg', 'home_sliders/gambar2.jpg', 'home_sliders/gambar3.jpg'];
+        $defaultSliders = [
+            'img/home_sliders/gambar1.jpg',
+            'img/home_sliders/gambar2.jpg',
+            'img/home_sliders/gambar3.jpg',
+        ];
     @endphp
 
     <div class="layer md:col-span-2 bg-white flex flex-col items-start w-full max-w-full overflow-x-hidden">

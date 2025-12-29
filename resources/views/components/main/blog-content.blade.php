@@ -34,7 +34,7 @@
                 @for ($i = 1; $i <= 10; $i++)
                     <div class="rounded-[20px] bg-[#E4E0DD] h-[180px] shadow-sm overflow-hidden">
 
-                        <img src="{{ asset('storage/articles/default1.jpg') }}"
+                        <img src="{{ asset('img/articles/default1.jpg') }}"
                             class="w-full h-[110px] object-cover opacity-80" />
 
                         <div class="p-2">
